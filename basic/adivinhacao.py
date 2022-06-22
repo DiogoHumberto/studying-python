@@ -38,3 +38,6 @@ def jogar():
         print(
             "QUAN QUAN QUANNNNNNNNNNNN ---->   Não foi dessa vez :( !!!! O NÚMERO SECRETO ERA *** {} ***  TENTE NOVAMENTE "
             .format(numeroSecreto))
+
+if(__name__ == "__main__"):
+    jogar()
