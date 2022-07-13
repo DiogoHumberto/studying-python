@@ -2,3 +2,6 @@ Banana
 Maça
 Pessego
 Abacate
+Uva
+Morango
+Melancia

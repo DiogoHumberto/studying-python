@@ -1,18 +1,15 @@
+import random
+
 
 def jogar():
-
     exibirMsgIncioJogo()
+    arquivo = open('palavras.txt', 'r')
+    palavras = [linha.strip() for linha in arquivo]
+    arquivo.close()
 
-    lines = ['Banana', 'Maça', 'Pessego', 'Abacate']
-    with open('palavras.txt', 'w') as f:
-        for line in lines:
-            f.write(line)
-            f.write('\n')
-    f.close()
+    palavra_secreta = palavras[random.randrange(0, len(palavras))].upper()
 
-
-    palavra_secreta = "pyhton".upper()
-    letras_acertadas = ["_" for letra in palavra_secreta]
+    letras_acertadas = ["_" for _ in palavra_secreta]
 
     enforcou = False
     acertou = False
@@ -20,14 +17,14 @@ def jogar():
 
     print(letras_acertadas)
 
-    while (not enforcou and not acertou):
+    while not enforcou and not acertou:
 
         chute = input("Qual a letra ? ").strip().upper()
 
         if chute in palavra_secreta:
             index = 0
             for letra in palavra_secreta:
-                if (chute == letra):
+                if chute == letra:
                     letras_acertadas[index] = letra
                 index += 1
 
@@ -39,7 +36,7 @@ def jogar():
 
         print(letras_acertadas)
 
-    if (acertou):
+    if acertou:
         print("Você ganhou!!!")
     else:
         print("Você perdeu!!!")
@@ -53,7 +50,5 @@ def exibirMsgIncioJogo():
     print("*********************************")
 
 
-if(__name__ == "__main__"):
+if __name__ == "__main__":
     jogar()
-
-
