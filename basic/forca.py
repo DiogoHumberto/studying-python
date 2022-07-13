@@ -3,6 +3,14 @@ def jogar():
 
     exibirMsgIncioJogo()
 
+    lines = ['Banana', 'Maça', 'Pessego', 'Abacate']
+    with open('palavras.txt', 'w') as f:
+        for line in lines:
+            f.write(line)
+            f.write('\n')
+    f.close()
+
+
     palavra_secreta = "pyhton".upper()
     letras_acertadas = ["_" for letra in palavra_secreta]
 
